@@ -1,0 +1,4 @@
+0x18c-0x219: read functions (see datasheet)
+0x21a-0x2a7: write functions (see datasheet)
+0x2a8-0x2b3: self-test functions (rom, ram, cpu?, srom, sfr rom?, loaded srom)
+0x2b4-0x2bd: interrupts

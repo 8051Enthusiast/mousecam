@@ -1,0 +1,109 @@
+uint8:
+	packet size in 4^n bytes, except for n=1 with 2 byte packets
+uint8:
+	01-03: numlock etc.
+	04: send data with size to address
+	05: sent data with size from address
+	06: commands to change things
+uint8[2]:
+	unknown: bb aa
+uint8:	
+	command:
+		04: set profile
+		28: set report rate
+		2a: set color profile
+		32: set DPI profile
+		34: set DPI 1 options
+		35: set DPI 2 options
+		36: set DPI 3 options
+		37: set DPI 4 options
+		38: set DPI 5 options
+		3e: set left button options
+		3f: set right button options
+		40: set middle button options
+		41: set forward button options
+		42: set backward button options
+		43: set dpi incr. button options
+		44: set dpi subtr. button options
+		
+
+profile options:
+	uint8[3]:
+		unknown: 00 01 00
+	uint8:
+		Profile (range 0-4 for profile 1-5)
+	uint8[7]:
+		padding?: 00 00 00 00 00 00 00
+
+report rate options:
+	uint8[3]:
+		unknown: 00 01 00
+	uint8:
+		report rate in 1000/n
+	uint8[7]:
+		padding?: 00 00 00 00 00 00 00
+
+color profile options:
+	uint8[3]:
+		unknown: 00 0a 00
+	uint8[3]:
+		rgb color (red, green, blue)
+	uint8:
+		color mode (00 = DISABLED, 01 = CONSTANT, 02 = BREATHING, 03 = COLOR SHIFT)
+	uint8:
+		unknown: 00
+	uint8:
+		brightness: (01 = DIM, 02 = MEDIUM, 03 = BRIGHT)
+	uint8:
+		speed: (01 = FAST, 03 = MEDIUM, 05 = SLOW???)
+	uint8[49]:
+		padding?: {00}
+
+DPI number options:
+	uint8[3]:
+		unknown: 00 01 00 (related with option number?)
+	uint8:
+		DPI number (range 0-4 for DPI 1-5)
+	uint8[7]:
+		padding?: 00 00 00 00 00 00 00
+	
+DPI options:
+	uint8[3]:
+		unknown: 00 08 00
+	uint8:
+		unknown: 01
+	uint16:
+		XDPI in 50 multiples
+	uint16:
+		YDPI in 50 multiples
+	uint8[3]:
+		padding?: 00 00 00
+
+Button options:
+	uint8[3]:
+		unknown: 00 08 00
+	uint8:
+		mode: 00 for disabled, 01 for mouse buttons, 02-05 for other things
+	uint8:
+		Click function: (01 = left click, 02 = right click, 04 =
+		middle click, 08 = backward, 10 = forward...)
+	uint8[2]:
+		unknown: 00 00
+	uint8:
+		mode:
+			bit 7: do on key up
+			bit 0-2: (0 = play once, 1 = play n times, 2 = repeat
+			while pressed, 3 = toggle auto repeat, 4 = toggle
+			hold)
+	uint8:
+		repetitions: (n for "play n times", otherwise 1)
+	uint16:
+		delay in ms (0 for "play once", 32 for "toggle hold",
+		otherwise the delay specified)
+macroaction:
+	uint8:
+		action type: (01: mouse button, 02: keyboard event, ..., 06
+		delay, bit 7 indicates press, while absense indicates release)
+	uint8[2]:
+		data
+

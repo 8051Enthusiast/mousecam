@@ -1,0 +1,50 @@
+0x37,0x38: port address map
+0x44: run_downshift?
+0x4d,0x4e: temp address
+
+0x8008: patch rom length upper
+0x8009: patch rom length lower
+0x800a:	.3: running patch rom port routine
+	.6: do more init
+	.7: cause reset and do even more init
+0x800b: maximum register
+0x800c: patch read reg address u
+0x800d: patch read reg address l
+0x800e: patch write reg address u
+0x800f: patch write reg address l
+0x8010: main loop address for irq fallback u
+0x8010: main loop address for irq fallback l
+0x8012: main loop address u
+0x8013: main loop address l
+0x8014-0x801d: interrupt addresses
+0x8023: srom upload status
+	.2: SROM init start
+	.4: SROM init finish
+	.5: SROM upload started
+0x8025:	motion
+0x8026: ydpi (/50)
+0x8027: xdpi (/50)
+0x8028: configuration_ii
+0x8029: configuration_iv
+	.0: srom size
+	.7: highest bit 0xb5
+0x802a:	.0: srom is running
+	.2: frame data
+	.3: data_out_lower to read
+0x802d: lower byte of current 2 byte read
+0x802f:	.0: upper byte was read
+0x8031: .0: (set by conf_iv, disables dpi refresh?)
+	.1: debug read enable
+	.2: debug write enable
+0x8036: dpi mask (0xff)
+0x803d:	.2: chip running srom?
+0x8043: Shutter_Upper
+0x8044: Shutter_Lower
+0x8045: Frame_Period_Upper
+0x8046: Frame_Period_Lower
+0x8052: dpi default
+0x8056: used for self-test?
+0x805b: data_out_upper
+0x805c: data_out_lower
+0x805d: pattern test upper
+0x805e: pattern test lower

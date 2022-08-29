@@ -1,0 +1,30 @@
+0x11: ???
+0x21: access port 0xc0
+0x22: access port 0xc2
+0x23: access port 0xc3
+0x27: access port 0xa2
+0x28: access port 0xa3
+0x29: ???
+0x2b: access port 0x9a
+0x2c: access port 0x99
+0x2d: set msb of address 0x47/read 0x47
+0x30: 0x44: enable debug bit 1 and 2, 0xbd: enable debug bit 2
+0x31: (needs debug bit 1) access lower debug address byte
+0x32: (needs debug bit 1) access upper debug address byte
+0x33: (needs debug bit 1) access xdata address (or ram if address < 256)
+0x34: same as 0x33, but increment address at end
+0x35: (needs debug bit 1) access srom with address+0xc006 and increment
+0x36: (debug bit 1 for read, debug bit 2 for write) read rom address, write xdata address
+0x37: ???
+0x38: ???
+0x3c: read 0xff
+0x3d: access 0x3f
+0x3e: inverse revision id?
+0x40: (read debug bit 1, write debug bit 2) access 0x94
+0x41: (read debug bit 1, write debug bit 2) access 0x95
+0x43: ???
+0x44: (db 1) set sfr read address
+0x45: (db 2) set sfr write address
+0x46: (db 1/2) execute sfr read/write
+
+

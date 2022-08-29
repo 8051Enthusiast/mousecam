@@ -1,0 +1,7 @@
+/mousecam/target
+*.hex
+*.bin
+*.lst
+*.bin.a51
+.*~
+firmware
