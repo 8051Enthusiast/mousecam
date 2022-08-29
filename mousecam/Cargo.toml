@@ -1,0 +1,23 @@
+[package]
+name = "rusttest"
+version = "0.1.0"
+authors = ["8051Enthusiast <8051Enthusiast@protonmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rusb = "^0.5.2"
+failure = "^0.1.6"
+itertools = "^0.8"
+minifb = "0.15.1"
+image = "^0.22.4"
+lazy_static = "^1.4.0"
+fftw = "^0.6.0"
+[dependencies.uinput]
+version = "0.1.3"
+default-features = false
+#features = ["udev"]
+
+[profile.release]
+opt-level = 3

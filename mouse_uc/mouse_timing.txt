@@ -1,0 +1,110 @@
+1.000000	nop
+3.970802	ajmp addri1
+4.965114	ljmp addri6
+1.003166	rr a
+0.999995	inc a
+2.980575	inc direct
+2.983318	inc @ri
+1.993804	inc ri
+5.956337	jbc direct, offset
+1.008630	rrc a
+1.008932	dec a
+2.987584	dec direct
+2.986011	dec @ri
+1.993302	dec ri
+5.952876	jb bit, offset
+1.005019	rl a
+1.997584	add a, #immed
+2.004298	add a, direct
+2.002553	add a, @ri
+1.006786	add a, ri
+5.955756	jnb bit, offset
+1.009215	rlc a
+1.993257	addc a, #immed
+1.994578	addc a, direct
+1.997933	addc a, @ri
+1.004265	addc a, ri
+1.991826	jc offset
+2.976044	orl direct, a
+2.983234	orl direct, #immed
+1.992963	orl a, #immed
+1.993560	orl a, direct
+1.985696	orl a, @ri
+1.003331	orl a, ri
+3.981240	jnc offset
+2.981453	anl direct, a
+2.976732	anl direct, #immed
+1.990786	anl a, #immed
+1.998974	anl a, direct
+2.007916	anl a, @ri
+1.012897	anl a, ri
+2.990036	jz offset
+2.990518	xrl direct, a
+2.986935	xrl direct, #immed
+1.997382	xrl a, #immed
+2.000756	xrl a, direct
+2.003374	xrl a, @ri
+1.010699	xrl a, ri
+4.967550	jnz offset
+2.001500	orl c, bit
+2.003637	mov a, #immed
+2.989819	mov direct, #immed
+2.000968	mov @ri, #immed
+1.998657	mov ri, #immed
+3.992882	sjmp offset
+2.002570	anl c, bit
+7.941244	movc a, @a+pc
+2.983303	div ab
+2.984106	mov direct, direct
+2.993784	mov direct, @ri
+1.996671	mov direct, ri
+2.993482	mov dptr, #immed16
+2.992999	mov bit, c
+6.948553	movc a, @a+dptr
+1.997434	subb a, #immed
+2.005497	subb a, direct
+2.000730	subb a, @ri
+1.017373	subb a, ri
+2.001584	orl c, /bit
+2.002041	mov c, bit
+3.985318	inc dptr
+10.913385	mul ab
+2.989871	mov @ri, direct
+2.990478	mov ri, direct
+2.002219	anl c, /bit
+2.994394	cpl bit
+1.012275	cpl c
+5.959689	cjne a, #immed, offset
+3.970683	cjne a, direct, offset
+5.949981	cjne @ri, #immed, offset
+5.963852	cjne ri, #immed, offset
+2.983094	clr bit
+1.005661	clr c
+3.978582	swap a
+3.969674	xch a, direct
+3.971725	xch a, @ri
+2.986294	xch a, ri
+2.986002	setb bit
+1.001540	setb c
+1.005128	da a
+5.963061	djnz direct, offset
+3.985934	xchd a, @ri
+4.964457	djnz ri, offset
+5.941872	movx a, @dptr
+4.977767	movx a, @ri
+1.013895	clr a
+2.010829	mov a, direct
+1.999665	mov a, @ri
+1.018196	mov a, ri
+4.949721	movx @dptr, a
+3.975000	movx @ri, a
+0.995004	cpl a
+1.998444	mov direct, a
+1.992218	mov @ri, a
+2.000727	mov ri, a
+3.965471	pop direct
+4.943703	push direct
+7.922755	ret
+6.943375	lcall addr16
+6.957004	acall addr11
+5.916535	jmp @a+dptr
